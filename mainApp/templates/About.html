@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}
+<title>CNBC | about page</title>
+{% endblock %}
+
+{% block body %}
+<h5 class="bg-primary text-light text-center p-2 mt-3">About Us</h5>
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <h1 class="text-center">Welcome to CNBC NEWS.</h1>
+            <p  style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit aperiam nostrum iure assumenda
+                quia
+                maiores molestiae voluptatibus enim, voluptates perferendis error ab explicabo velit veniam adipisci
+                ducimus?
+                Iste ad consectetur harum. Fugiat assumenda error omnis praesentium, vel reiciendis at blanditiis unde
+                rerum.
+                Enim eius ullam laborum? Assumenda consectetur maxime, sit eos optio temporibus placeat eaque deleniti!
+                Adipisci
+                fugiat nam maiores, velit aliquam, commodi ducimus corporis eveniet quisquam blanditiis dolorum optio
+                consequuntur mollitia voluptas hic. Laudantium at cupiditate unde! Sed, quidem? Sapiente, non nesciunt.
+                Natus,
+                vel quaerat veniam facilis voluptatem voluptates facere architecto quae, velit alias incidunt tempore
+                accusantium veritatis sint!</p>
+                <h5>Mukul Sharma Founder and Developer of CNBC_NEWS.com.</h5>
+        </div>
+        <div class="col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-0 col-0">
+        </div>
+        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+            <img src="{% static 'images/mypic.jpg'%}" class="w-100" >
+        </div>
+        <div class="col-xxl-1 col-xl-1 col-lg-1 col-md-1 col-sm-0 col-0">
+        </div>
+    </div>
+</div>
+{% endblock %}

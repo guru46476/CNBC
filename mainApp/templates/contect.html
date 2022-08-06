@@ -1,0 +1,77 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}
+<title>CNBC | Contect Page</title>
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="shadow p-3 mb-4 bg-body rounded text-dark text-center p-3 mb-3">
+                sharmamukul4374@gmail.com
+            </div>
+            <div class="shadow p-3 mb-4 bg-body rounded text-dark text-center p-3 mb-3">
+                8770643XXX
+            </div>
+            <div class="shadow p-3 mb-4 bg-body rounded text-dark text-center p-3 mb-3">
+                B-34,Nai-sadak,lashker,Gwalior,
+            </div>
+            <div class="mapouter">
+                <div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas"
+                        src="https://maps.google.com/maps?q=%20Near%20kailash%20talkies,nai%20sadak,lashker,gwalior&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br>
+                    <style class="text-center">
+                        .mapouter {
+                            position: relative;
+                            text-align: right;
+                            height: 320px;
+                            /* width: 600px; */
+                        }
+                    </style><a href="https://www.embedgooglemap.net">google map insert</a>
+                    <style>
+                        .gmap_canvas {
+                            overflow: hidden;
+                            /* background: none !important; */
+                            height: 320px;
+                            /* width: 600px; */
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <h5 class="shadow p-3 mb-3 bg-primary rounded text-light p-1 text-center">Contect Us</h5>
+            {% for i in messages %}
+            <div class="alert alert-success" role="alert">
+                {{i}}
+            </div>
+            {% endfor %}
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" name="name" placeholder="Enter Your Name">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Id</label>
+                    <input type="email" class="form-control" name="email" placeholder="Enter Email Id">
+                </div>
+                <div class="mb-3">
+                    <label for="subject" class="form-label">Subject</label>
+                    <input type="text" class="form-control" name="subject" placeholder="Enter Subject">
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea name="message" rows="5" class="form-control"></textarea>
+                </div>    
+                <button type="submit" class="btn bg-body fst-normal w-100 shadow-lg p-3   rounded">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+<footer class="bgnav p-2 text-light text-center">
+    <p>copyright@CNBC.com</p>
+</footer>

@@ -1,0 +1,74 @@
+{% extends 'english.html' %}
+{% load static %}
+
+{% block title %}
+<title>CNBC | official page</title>
+{% endblock %}
+
+{% block body %}
+<h5 class="bg-warning text-light text-center p-2 mt-3">International News Section</h5>
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+            <!-- card -->
+            {% for i in Data %}
+            <div class="card w-100 mb-3">
+                {% if i.urlToImage %}
+                <img src={{i.urlToImage}} class="card-img-top">
+                {% else %}
+                <img src="{% static 'images/no.jpg' %}"></img>
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{i.title}}</h5>
+                    <p class="card-text">{{i.description}}</p>
+                    <a href="
+                            {% if i.url|length > 40 %}
+                            {{ i.url|slice:40 }}...
+                            {% else %}
+                            {{i.url}}...
+                            {% endif %}
+                            " class="bg-danger text-light btn btn-sm w-100">Read Full Article</a>
+                    <p class="card-text">{{i.publishedAt}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-4 col-sm-12 col-12">
+            {% for i in Data %}
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        {% if i.urlToImage %}
+                        <img src={{i.urlToImage}} height="100px"  class="card-img-top">
+                        {% else %}
+                        <img src="{% static 'images/no.jpg' %}" height="100px" class="card-img-top"></img>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{% if i.title|length > 80 %}
+                                {{ i.title|slice:80 }}...
+                                {% else %}
+                                {{i.title}}...
+                                {% endif %}</h5>
+                            <!-- <p class="card-text">{{i.description}}</p> -->
+                            <p class="card-text">{{i.publishedAt}}</p>
+                            <a href="
+                            {% if i.url|length > 40 %}
+                            {{ i.url|slice:40 }}...
+                            {% else %}
+                            {{i.url}}...
+                            {% endif %}
+                            " class="bg-danger text-light btn btn-sm shadow-sm w-100">Read Full Article</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- </div>
+    </div> -->
+</div>
+{% endblock %}
